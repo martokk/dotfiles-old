@@ -1,0 +1,80 @@
+"*":
+  "atom-material-ui":
+    colors:
+      genAccent: true
+      paintCursor: true
+    tabs:
+      compactTabs: true
+      tintedTabBar: true
+    treeView:
+      compactList: true
+    ui:
+      panelContrast: true
+      panelShadows: true
+  core:
+    autoHideMenuBar: true
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
+      ".pioenvs"
+      ".piolibdeps"
+      ".clang_complete"
+      ".gcc-flags.json"
+    ]
+    openEmptyEditorOnStart: false
+    telemetryConsent: "no"
+    themes: [
+      "seti-ui"
+      "seti-classic-syntax"
+    ]
+  editor:
+    fontSize: 12
+    scrollPastEnd: true
+    showIndentGuide: true
+    showInvisibles: true
+    softWrap: true
+  "exception-reporting":
+    userId: "663c62fc-57ff-4ef8-bb24-777587f958d7"
+  "file-icons":
+    coloured: false
+  "linter-js-yaml":
+    customTags: [
+      "!secret"
+      "!include_dir_merge_named"
+      "!include_dir_merge"
+      "!include_dir_named"
+      "!include_dir"
+      "!include"
+      "!include_dir_list"
+    ]
+  "linter-ui-default":
+    showPanel: true
+    useBusySignal: false
+  minimap:
+    plugins:
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
+      "git-diff": false
+      "git-diffDecorationsZIndex": 0
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+      linter: true
+      linterDecorationsZIndex: 0
+  "platformio-ide":
+    showPIOHome: false
+  "seti-syntax":
+    themeColor: "Green"
+  "seti-ui":
+    compactView: true
+  "tool-bar":
+    position: "Left"
+    visible: false
+  "tree-view":
+    hideIgnoredNames: true
+  welcome:
+    showOnStartup: false
