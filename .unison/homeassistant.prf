@@ -1,0 +1,23 @@
+# Unison preferences
+dontchmod = true
+ignore = Name {home-assistant_v2.db.part}
+ignore = Name {home-assistant_v2.db}
+ignore = Name {homeassistant}
+ignore = Name {ios.conf}
+ignore = Name {.spotify-token-cache}
+ignore = Name {home-assistant.log}
+ignore = Name {home-assistant_v2.db-wal}
+ignore = Name {home-assistant_v2.db-shm}
+ignore = Path {deps/}
+ignore = Path {tts/}
+ignore = Path {/deps}
+ignore = Path {/tts}
+ignore = Path {tts}
+ignore = Path {deps}
+ignore = Name {.HA_VERSION}
+ignore = Name {.directory}
+ignore = Name {.google.token}
+label = 
+perms = 0
+root = /home/martokk/homeassistant
+root = ssh://vserver@vserver/server/homeassistant
