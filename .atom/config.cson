@@ -33,7 +33,7 @@
       "seti-classic-syntax"
     ]
   editor:
-    fontSize: 12
+    fontSize: 13
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
