@@ -126,3 +126,11 @@ if [ $install_apps ]; then
 	sudo apt-get update && sudo apt-get upgrade
 	sudo apt-get install -y steam
 fi
+
+############## Install Thunderbird ##############
+echo "Install Thunderbird? (y/n)"
+read install_apps
+if [ $install_apps ]; then
+	echo "Installing Thunderbird"
+	sudo apt-get install -y thunderbird
+fi
