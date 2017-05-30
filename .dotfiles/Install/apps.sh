@@ -11,8 +11,6 @@ read install_apps
 if [ $install_apps ]; then
 	echo "Installing Essential Apps"
 
-	# Flux
-	sudo add-apt-repository -y ppa:nathan-renniewaldock/flux
 	# Latte Dock
 	sudo add-apt-repository -y ppa:rikmills/latte-dock
 	# QOwnNotes
@@ -34,7 +32,8 @@ if [ $install_apps ]; then
 	git \
 	openssh-server \
 	sshfs \
-	fluxgui \
+	redshift \
+	redshift-plasmoid \
 	latte-dock \
 	gimp \
 	qownnotes \
@@ -50,7 +49,8 @@ if [ $install_apps ]; then
 	virtualbox-guest-dkms \
 	remmina \
 	wine \
-	playonlinux
+	playonlinux \
+	python3-pip
 fi
 
 ############## Install Atom ##############
