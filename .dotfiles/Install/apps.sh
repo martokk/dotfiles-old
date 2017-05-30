@@ -5,70 +5,124 @@ command_exists() {
 	type "$1" > /dev/null 2>&1
 }
 
+############## Install Essentials ##############
+echo "Install Essential Apps? (y/n)"
+read install_apps
+if [ $install_apps ]; then
+	echo "Installing Essential Apps"
+
+	# Flux
+	sudo add-apt-repository -y ppa:nathan-renniewaldock/flux
+	# Latte Dock
+	sudo add-apt-repository -y ppa:rikmills/latte-dock
+	# QOwnNotes
+	sudo add-apt-repository -y ppa:pbek/qownnotes
+	# Albert
+	sudo add-apt-repository -y ppa:nilarimogard/webupd8
+	# Telegram
+	sudo add-apt-repository -y ppa:atareao/telegram
+	# Chrome
+	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+	sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+
+	# Update
+	sudo apt-get update && sudo apt-get upgrade
+
+	#Install
+	sudo apt-get install -y \
+	google-chrome-stable \
+	git \
+	openssh-server \
+	sshfs \
+	fluxgui \
+	latte-dock \
+	gimp \
+	qownnotes \
+	htop \
+	iotop \
+	unison \
+	unison-gtk \
+	gparted \
+	curl \
+	albert \
+	telegram \
+	virtualbox \
+	virtualbox-guest-dkms \
+	remmina \
+	wine \
+	playonlinux
+fi
+
+############## Install Atom ##############
+echo "Install Atom? (y/n)"
+read install_apps
+if [ $install_apps ]; then
+	echo "Installing Atom"
+
+	# Install Atom & Clang
+	sudo add-apt-repository ppa:webupd8team/atom
+	sudo apt-get update && sudo apt-get upgrade
+	sudo apt-get install -y \
+	atom \
+	clang \
+
+	# Install Atom Packages
+	apm list --installed --bare > ~/.atom/package-list.txt
+
+	# Install PlatformIO Libraries
+	cd ~/.platformio/lib/
+	git clone https://github.com/adafruit/Adafruit_NeoPixel.git
+	git clone https://github.com/kitesurfer1404/WS2812FX.git
+	git clone https://github.com/knolleary/pubsubclient.git
+	git clone https://github.com/adafruit/Adafruit_Sensor.git
+	git clone https://github.com/adafruit/DHT-sensor-library.git
+	cd ~
+fi
 
 
-############## Install App Repositories ##############
-# Flux
-sudo add-apt-repository -y ppa:nathan-renniewaldock/flux
-# Latte Dock
-sudo add-apt-repository -y ppa:rikmills/latte-dock
-# QOwnNotes
-sudo add-apt-repository -y ppa:pbek/qownnotes
-# Spotify
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 && \
-echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
-# Albert
-sudo add-apt-repository -y ppa:nilarimogard/webupd8
-# Steam
-sudo add-apt-repository -y multiverse
-# Telegram
-sudo add-apt-repository -y ppa:atareao/telegram
-# Atom
-sudo add-apt-repository ppa:webupd8team/atom
-# Chrome
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+############## Install Spotify ##############
+echo "Install Spotify? (y/n)"
+read install_apps
+if [ $install_apps ]; then
+	echo "Installing Spotify"
 
-############## Apt Update & Upgrade ##############
-sudo apt-get update && sudo apt-get upgrade
+	# Install Repo
+	sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 && \
+	echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
 
-############## Download Packages ##############
-# GitKraken
-wget https://release.gitkraken.com/linux/gitkraken-amd64.tar.gz
-tar -xvzf gitkraken-amd64.tar.gz
+	# Update
+	sudo apt-get update && sudo apt-get upgrade
 
-############## Install App packages ##############
-sudo apt-get install -y \
-google-chrome-stable \
-git \
-openssh-server \
-sshfs \
-clang \
-fluxgui \
-latte-dock \
-gimp \
-qownnotes \
-spotify-client \
-transmission \
-htop \
-iotop \
-unison \
-unison-gtk \
-gparted \
-curl \
-albert \
-steam \
-telegram \
-atom \
-virtualbox \
-virtualbox-guest-dkms \
-remmina \
-wine \
-playonlinux \
+	# Install
+	sudo apt-get install -y spotify-client
+fi
 
 
-# GitKraken
-tar -xvzf gitkraken-amd64.tar.gz
+############## Install GitKraken ##############
+echo "Install GitKraken? (y/n)"
+read install_apps
+if [ $install_apps ]; then
+	echo "Installing GitKraken"
+	wget https://release.gitkraken.com/linux/gitkraken-amd64.tar.gz
+	tar -xvzf gitkraken-amd64.tar.gz
+fi
 
-############## Install Atom Packages ##############
-apm list --installed --bare > ~/.atom/package-list.txt
+
+############## Install Transmission ##############
+echo "Install Transmission? (y/n)"
+read install_apps
+if [ $install_apps ]; then
+	echo "Installing Transmission"
+	sudo apt-get install -y transmission
+fi
+
+
+############## Install Steam ##############
+echo "Install Steam? (y/n)"
+read install_apps
+if [ $install_apps ]; then
+	echo "Installing Steam"
+	sudo add-apt-repository -y multiverse
+	sudo apt-get update && sudo apt-get upgrade
+	sudo apt-get install -y steam
+fi

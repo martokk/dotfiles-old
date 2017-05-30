@@ -5,7 +5,7 @@ command_exists() {
 	type "$1" > /dev/null 2>&1
 }
 
-# Setting up some variables
+############## Variables ##############
 EMAIL=""
 BIN="$HOME/Bin"
 DOWNLOADS="$HOME/Downloads"
@@ -15,7 +15,7 @@ SSH_CLIENT1="martokk@desktop"
 SSH_CLIENT2="vserver@vserver"
 # SSH_CLIENT3="martokk@desktop"
 
-# Creating needed directories
+############## Directories ##############
 if [ ! -d "$BIN" ]; then
   mkdir -p $BIN
 fi
@@ -26,7 +26,7 @@ if [ ! -d "$DEVFOLDER" ]; then
   mkdir -p $DEVFOLDER
 fi
 
-## Add computers to /etc/hosts
+############## /etc/hosts ##############
 echo "Install '/etc/hosts'? (y/n)"
 read install_hosts
 if [ $install_hosts ]; then
@@ -34,7 +34,7 @@ if [ $install_hosts ]; then
 	source install/hosts.#!/bin/sh
 fi
 
-# Import Dotfiles
+############## Dotfiles ##############
 echo "Install dotfiles? (y/n)"
 read install_dotfiles
 if [ $install_dotfiles ]; then
@@ -44,15 +44,16 @@ if [ $install_dotfiles ]; then
 
 fi
 
-# Installing the apps that we need
-echo "Install Apps? (y/n)"
+############## Install Apps ##############
+echo "Install Apps? (y/n) NOTE: Please review apps.sh and know what is being installed! Modify for each computer"
 read install_apps
 if [ $install_apps ]; then
 	echo "Installing Apps"
 	source install/apps.sh
 fi
 
-# Setup SSH key if needed
+############## SSH Keys ##############
+echo "Install SSH Keys? (y/n)"
 read install_ssh_keys
 if [ $install_ssh_keys ]; then
 	echo "Installing ~/.ssh & SSH Keys"
@@ -69,5 +70,16 @@ if [ $install_ssh_keys ]; then
 	fi
 fi
 
+
+############## Install Video Wallaper ##############
+echo "Install Video Wallaper for Plasma? (y/n) "
+read install_video_wallpaper
+if [ $install_video_wallpaper ]; then
+	echo "Video Wallaper"
+	mkdir .local/share/plasma/wallpapers
+	cd ~/.local/share/plasma/wallpapers
+	git clone https://github.com/halverneus/org.kde.video.git
+	cd ~
+fi
 
 echo "Done. Reload your terminal."
