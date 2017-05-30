@@ -97,7 +97,7 @@ alias config='/usr/bin/git --git-dir=/home/martokk/.cfg/ --work-tree=/home/marto
 eval $(thefuck --alias)
 # You can use whatever you want as an alias, like for Mondays:
 eval $(thefuck --alias FUCK)
-alias update='sudo apt-get update && sudo apt-get upgrade'
+alias update='sudo apt-get update && sudo apt-get upgrade -y'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
