@@ -34,3 +34,7 @@
   'Half Block':
     'prefix': 'hb'
     'body': '#********** $1 ***********#'
+
+  'If Statement':
+    'prefix': 'if'
+    'body': '{% if $1 %}\n  $2\n{% else %}\n  $3\n{% end if %}'

@@ -12,6 +12,9 @@
       panelContrast: true
       panelShadows: true
   core:
+    disabledPackages: [
+      "language-gfm"
+    ]
     ignoredNames: [
       ".git"
       ".hg"
@@ -26,13 +29,14 @@
       ".gcc-flags.json"
     ]
     openEmptyEditorOnStart: false
+    packagesWithKeymapsDisabled: []
     telemetryConsent: "no"
     themes: [
       "seti-ui"
       "seti-classic-syntax"
     ]
   editor:
-    fontSize: 12
+    fontSize: 13
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
@@ -41,6 +45,7 @@
     userId: "663c62fc-57ff-4ef8-bb24-777587f958d7"
   "file-icons":
     coloured: false
+  "git-diff": {}
   "linter-gcc":
     execPath: "/usr/bin/gcc"
   "linter-js-yaml":
@@ -59,14 +64,18 @@
     useBusySignal: false
   minimap:
     plugins:
+      bookmarks: true
+      bookmarksDecorationsZIndex: 0
       "find-and-replace": true
       "find-and-replaceDecorationsZIndex": 0
-      "git-diff": false
+      "git-diff": true
       "git-diffDecorationsZIndex": 0
-      "highlight-selected": true
+      "highlight-selected": false
       "highlight-selectedDecorationsZIndex": 0
-      linter: true
+      linter: false
       linterDecorationsZIndex: 0
+      selection: true
+      selectionDecorationsZIndex: 0
   "platformio-ide":
     advanced:
       checkAuthOnStartup: false
