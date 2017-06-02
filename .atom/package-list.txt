@@ -1,3 +1,5 @@
+Zen@0.18.0
+atom-alignment@0.13.0
 atom-beautify@0.29.24
 atom-material-syntax@1.0.6
 atom-material-syntax-dark@1.0.0
@@ -34,6 +36,7 @@ minimap-git-diff@4.3.1
 minimap-highlight-selected@4.6.1
 minimap-linter@2.0.0
 minimap-selection@4.4.0
+pigments@0.39.1
 platformio-ide@2.0.0-beta.4
 platformio-ide-debugger@1.2.2
 platformio-ide-terminal@2.5.1
