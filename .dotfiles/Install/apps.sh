@@ -22,6 +22,8 @@ if [ $install_apps ]; then
 	# Chrome
 	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 	sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+	# NeoFetch
+	sudo add-apt-repository ppa:dawidd0811/neofetch
 
 	# Update
 	sudo apt-get update && sudo apt-get upgrade
@@ -50,7 +52,9 @@ if [ $install_apps ]; then
 	remmina \
 	wine \
 	playonlinux \
-	python3-pip
+	python3-pip \
+	neofetch
+	
 fi
 
 ############## Install Atom ##############
