@@ -20,6 +20,13 @@ steem_usd=`bc -l <<< "scale=2; $steem_usd/1"`
 steem_btc=`curl -s https://api.coinmarketcap.com/v1/ticker/steem/ | jq '.[0].price_btc' | tr -d '"'`
 steem_mbtc=`bc -l <<< "scale=3; $steem_btc*1000/1"`
 
+##################### RIPPLE #####################
+xrp_usd=`curl -s https://api.coinmarketcap.com/v1/ticker/ripple/ | jq '.[0].price_usd' | tr -d '"'`
+xrp_usd=`bc -l <<< "scale=2; $xrp_usd/1"`
+
+xrp_btc=`curl -s https://api.coinmarketcap.com/v1/ticker/ripple/ | jq '.[0].price_btc' | tr -d '"'`
+xrp_mbtc=`bc -l <<< "scale=3; $xrp_btc*1000/1"`
+
 
 ##################### SUMMARY #####################
-echo "BTC: $"$btc_usd"    ||    ETH: $"$eth_usd" / "$eth_mbtc"m฿    |    STEEM: $"$steem_usd" / 0"$steem_mbtc"m฿"
+echo "BTC: $"$btc_usd"    ||    ETH: $"$eth_usd" / "$eth_mbtc"m฿    |    STEEM: $"$steem_usd" / 0"$steem_mbtc"m฿    |    XRP: $"0$xrp_usd" / 0"$xrp_mbtc"m฿"
