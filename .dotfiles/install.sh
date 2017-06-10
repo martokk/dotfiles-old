@@ -70,6 +70,15 @@ if [ $install_ssh_keys ]; then
 	fi
 fi
 
+############## Install Apps ##############
+echo "Install custom cron jobs? (y/n) NOTE: Please review and know what is being installed! Modify for each computer"
+read install_crons
+if [ $install_crons ]; then
+	echo "Installing crons"
+
+	crontab -l | { cat; echo "*/5 * * * * ~/Bin/auto_backup_files.sh"; } | crontab -
+	
+fi
 
 ############## Install Video Wallaper ##############
 echo "Install Video Wallaper for Plasma? (y/n) "
