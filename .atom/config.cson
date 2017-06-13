@@ -80,7 +80,6 @@
     advanced:
       checkAuthOnStartup: false
       showPlatformIOFiles: true
-    showPIOHome: false
   "seti-syntax":
     themeColor: "Green"
   "seti-ui":
