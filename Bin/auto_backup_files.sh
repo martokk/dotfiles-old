@@ -20,6 +20,7 @@ set -e
 DOWNLOADS_DIR="$HOME/Downloads/"
 BACKUP_DIR="$HOME/ownCloud/Apps & Programs/Program Files and Preferences/"
 
+
 # Move Tampermonkey Backup Files
 APP_DIR="$BACKUP_DIR/Chrome Extenstions & Themes/Tampermonkey/"
 
@@ -33,4 +34,20 @@ APP_DIR="$BACKUP_DIR/Chrome Extenstions & Themes/Stylish/"
 
 if [ -f $DOWNLOADS_DIR/stylish*.json ]; then
     mv $DOWNLOADS_DIR/stylish*.json "$APP_DIR"
+fi
+
+
+# Move HighlighThis Backup Files
+APP_DIR="$BACKUP_DIR/Chrome Extenstions & Themes/HighlightThis/"
+
+if [ -f $DOWNLOADS_DIR/HighlighThis*.txt ]; then
+    mv $DOWNLOADS_DIR/HighlighThis*.txt "$APP_DIR"
+fi
+
+
+# Move RES Backup Files
+APP_DIR="$BACKUP_DIR/Chrome Extenstions & Themes/RES/"
+
+if [ -f $DOWNLOADS_DIR/RES*.resbackup ]; then
+    mv $DOWNLOADS_DIR/RES*.resbackup "$APP_DIR"
 fi
