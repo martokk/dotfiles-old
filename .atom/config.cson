@@ -36,7 +36,7 @@
       "seti-classic-syntax"
     ]
   editor:
-    fontSize: 15
+    fontSize: 12
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
@@ -59,14 +59,14 @@
       "!include_dir_list"
     ]
   "linter-ui-default":
-    panelHeight: 91
+    panelHeight: 130
     showPanel: true
     useBusySignal: false
   minimap:
     plugins:
       bookmarks: true
       bookmarksDecorationsZIndex: 0
-      "find-and-replace": true
+      "find-and-replace": false
       "find-and-replaceDecorationsZIndex": 0
       "git-diff": true
       "git-diffDecorationsZIndex": 0
@@ -74,12 +74,13 @@
       "highlight-selectedDecorationsZIndex": 0
       linter: false
       linterDecorationsZIndex: 0
-      selection: true
+      selection: false
       selectionDecorationsZIndex: 0
   "platformio-ide":
     advanced:
       checkAuthOnStartup: false
       showPlatformIOFiles: true
+    showPIOHome: false
   "seti-syntax":
     themeColor: "Green"
   "seti-ui":
