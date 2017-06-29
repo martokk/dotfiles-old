@@ -22,9 +22,6 @@ fi
 if [ ! -d "$DOWNLOADS" ]; then
   mkdir -p $DOWNLOADS
 fi
-if [ ! -d "$DEVFOLDER" ]; then
-  mkdir -p $DEVFOLDER
-fi
 
 ############## /etc/hosts ##############
 echo "Install '/etc/hosts'? (y/n)"
@@ -77,7 +74,7 @@ if [ $install_crons ]; then
 	echo "Installing crons"
 
 	crontab -l | { cat; echo "*/5 * * * * ~/Bin/auto_backup_files.sh"; } | crontab -
-	
+
 fi
 
 ############## Install Video Wallaper ##############

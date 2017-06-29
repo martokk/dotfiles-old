@@ -54,7 +54,7 @@ if [ $install_apps ]; then
 	playonlinux \
 	python3-pip \
 	neofetch
-	
+
 fi
 
 ############## Install Atom ##############
@@ -80,6 +80,10 @@ if [ $install_apps ]; then
 	git clone https://github.com/knolleary/pubsubclient.git
 	git clone https://github.com/adafruit/Adafruit_Sensor.git
 	git clone https://github.com/adafruit/DHT-sensor-library.git
+
+	# Allow current user to access USB when uploading via PlatformIO
+	sudo adduser $USER dialout
+
 	cd ~
 fi
 
